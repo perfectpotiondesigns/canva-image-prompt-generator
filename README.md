@@ -1,9 +1,51 @@
-# Canva Image Prompt Generator
-
-A simple prompt generator to help you create creative image prompts for Canva.
-
-## Usage
-
-1. Choose a category
-2. Click **Generate Prompt**
-3. Copy and use the prompt in Canva
+=TEXTJOIN(CHAR(10),TRUE,
+"Create a high-quality, vibrant illustration of a stylized child character.",
+"",
+"Character Details:",
+"• Age: "&B2,
+"• Gender / Appearance: "&C2,
+"• Skin Tone: "&D2,
+"• Hair Style & Texture: "&E2,
+"• Eye Color: "&F2,
+"• Facial Expression: "&G2,
+"• Emotion / Feeling: "&H2,
+"• Personality Vibe: "&I2,
+"",
+"Style:",
+"• Art Style: "&J2,
+"• Rendering: "&K2,
+"• Proportions: "&L2,
+"• Finish: "&M2,
+"",
+"Outfit & Theme:",
+"• Outfit: "&N2,
+"• Theme: "&O2,
+"• Accessories: "&P2,
+"",
+"Pose & Action:",
+"• Pose: "&Q2,
+"• Action: "&R2,
+"• Body Language: "&S2,
+"",
+"Scene & Background:",
+"• Setting: "&T2,
+"• Environment Details: "&U2,
+"• Background Style: "&V2,
+"",
+"Mood & Atmosphere:",
+"• Overall Mood: "&W2,
+"• Energy Level: "&X2,
+"• Lighting Mood: "&Y2,
+"• Color Palette: "&Z2,
+"",
+"Composition:",
+"• Framing: "&AA2,
+"• Camera Angle: "&AB2,
+"• Focus: "&AC2,
+"",
+"Quality & Output:",
+"• Resolution: "&AD2,
+"• Format: "&AE2,
+"• Background Option: "&AF2,
+"• Constraints: "&AG2
+)
