@@ -1,151 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Canva Image Prompt Generator</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f0f4f8;
-      color: #333;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+Create a high-quality, vibrant illustration of a stylized child character.
 
-    .container {
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
-      max-width: 500px;
-      width: 100%;
-      text-align: center;
-    }
+Character Details:
+• Age: [CHILD AGE RANGE – e.g., 4–6, 6–8, 8–10]
+• Gender / Appearance: [GENDER / LOOK – e.g., girl, boy, neutral]
+• Skin Tone: [SKIN TONE]
+• Hair Style & Texture: [HAIR STYLE, LENGTH, TEXTURE]
+• Eye Color: [EYE COLOR]
+• Facial Expression: [EXPRESSION – smiling, excited, curious, joyful, calm]
+• Emotion / Feeling: [EMOTION – happy, confident, playful, proud, magical]
+• Personality Vibe: [PERSONALITY – sweet, adventurous, shy, brave, silly]
 
-    h1 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
+Style:
+• Art Style: [STYLE – cute 3D cartoon, chibi, Pixar-inspired, soft anime, storybook]
+• Rendering: [RENDER TYPE – 3D, vector, painterly, soft shading]
+• Proportions: [PROPORTION – big head, big eyes, childlike features]
+• Finish: [FINISH – clean, polished, vibrant, soft]
 
-    select, button {
-      padding: 10px;
-      margin: 10px 0;
-      font-size: 1rem;
-      width: 100%;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-    }
+Outfit & Theme:
+• Outfit: [OUTFIT – fairy dress, superhero suit, winter coat, school outfit]
+• Theme: [THEME – holiday, fantasy, back-to-school, princess, superhero]
+• Accessories: [ACCESSORIES – wings, cape, crown, backpack, wand]
 
-    button {
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
+Pose & Action:
+• Pose: [POSE – standing, jumping, waving, sitting, flying]
+• Action: [ACTION – holding a gift, casting magic, running, reading a book]
+• Body Language: [BODY LANGUAGE – confident, playful, energetic, relaxed]
 
-    button:hover {
-      background-color: #45a049;
-    }
+Scene & Background:
+• Setting: [SETTING – enchanted forest, winter wonderland, classroom, candy land]
+• Environment Details: [DETAILS – snow, sparkles, balloons, clouds]
+• Background Style: [BACKGROUND – soft gradient, illustrated scene, simple pastel]
 
-    .prompt-box {
-      margin-top: 1rem;
-      padding: 1rem;
-      background-color: #f9f9f9;
-      border: 1px dashed #999;
-      border-radius: 6px;
-      min-height: 60px;
-    }
+Mood & Atmosphere:
+• Overall Mood: [MOOD – magical, cozy, joyful, adventurous, dreamy]
+• Energy Level: [ENERGY – calm, excited, playful, heroic]
+• Lighting Mood: [LIGHTING – soft glow, warm sunshine, cool winter light]
+• Color Palette: [COLORS – pastel, bright, soft, bold]
 
-    .copy-btn {
-      margin-top: 10px;
-      background-color: #007BFF;
-    }
+Composition:
+• Framing: [FRAMING – full body, half body, portrait]
+• Camera Angle: [ANGLE – front view, slight 3/4 angle]
+• Focus: [FOCUS – character centered, character with environment]
 
-    .copy-btn:hover {
-      background-color: #0064d3;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Canva Image Prompt Generator</h1>
-    
-    <label for="category">Choose Category:</label>
-    <select id="category">
-      <option value="Nature">Nature</option>
-      <option value="Business">Business</option>
-      <option value="Abstract">Abstract</option>
-      <option value="Minimalist">Minimalist</option>
-      <option value="Futuristic">Futuristic</option>
-      <option value="Retro">Retro</option>
-    </select>
-    
-    <button onclick="generatePrompt()">Generate Prompt</button>
-    
-    <div class="prompt-box" id="promptBox"></div>
-    <button class="copy-btn" onclick="copyPrompt()">Copy Prompt</button>
-  </div>
-
-  <script>
-    const prompts = {
-      Nature: [
-        "A serene forest at sunrise with mist and golden light",
-        "A colorful meadow in spring with butterflies",
-        "A close-up of dewdrops on green leaves",
-        "A vast mountain range under a dramatic sky"
-      ],
-      Business: [
-        "A modern coworking office with laptops and coffee cups",
-        "A handshake between business professionals",
-        "A presentation scene with charts and graphs",
-        "A clean workspace with minimalist decor"
-      ],
-      Abstract: [
-        "A swirl of vivid neon colors on black background",
-        "Geometric shapes with shadows and gradients",
-        "A liquid chrome texture in motion",
-        "Surreal art with floating 3D objects"
-      ],
-      Minimalist: [
-        "A monochrome object on a pastel background",
-        "Flat icon set with clean lines",
-        "Minimal geometric wallpaper",
-        "A centered quote on a solid background"
-      ],
-      Futuristic: [
-        "A glowing cyberpunk city at night",
-        "AI-themed interface with HUD elements",
-        "Robotic hand holding a digital planet",
-        "A sci-fi corridor with blue lighting"
-      ],
-      Retro: [
-        "80s styled neon grid background",
-        "A vintage computer setup with CRT monitor",
-        "Old-school cassette tapes on a desk",
-        "Pop-art style comic explosion"
-      ]
-    };
-
-    function generatePrompt() {
-      const category = document.getElementById('category').value;
-      const options = prompts[category];
-      const randomIndex = Math.floor(Math.random() * options.length);
-      const prompt = options[randomIndex];
-      document.getElementById('promptBox').textContent = prompt;
-    }
-
-    function copyPrompt() {
-      const promptText = document.getElementById('promptBox').textContent;
-      if (!promptText) return alert("No prompt to copy!");
-      navigator.clipboard.writeText(promptText).then(() => {
-        alert("Prompt copied to clipboard! ✅");
-      });
-    }
-  </script>
-</body>
-</html>
+Quality & Output:
+• Resolution: Ultra high-resolution, crisp, clean details
+• Format: Print-ready, Canva-friendly
+• Background Option: [BACKGROUND TYPE – transparent / solid / illustrated]
+• No blur, no distortion, no extra limbs, no text, no watermark
